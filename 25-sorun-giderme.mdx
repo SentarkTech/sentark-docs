@@ -1,0 +1,117 @@
+---
+title: "Sorun giderme"
+description: "Karşılaşılan sorunların belirtilerine göre çözüm adımları: yükleme hataları, eksik veriler, kilitli düğmeler ve erişim sorunları."
+---
+
+import { AccordionItem, Accordions, Callout, Steps } from '@prosefly/astro-components';
+
+Bu sayfa, belirtiye göre ilerleyen bir sorun giderme rehberidir. Sorununuzu aşağıdaki başlıklarda bulamazsanız önce [SSS](/sss/) sayfasına bakın. Hâlâ çözülmüyorsa organizasyon yöneticinize veya Sentark desteğine ekran görüntüsüyle birlikte yazın.
+
+## Yükleme ve görüntü sorunları
+
+<Accordions>
+  <AccordionItem title="Dosya hatalı olarak işaretlendi">
+    Dosya bozuk, desteklenmeyen biçimde veya okunamıyor olabilir. Dosyayı
+    başka bir görüntüleyicide açmayı deneyin. Açılmıyorsa dosya bozuktur.
+    Açılıyorsa JPEG olarak yeniden kaydedip tekrar yükleyin.
+  </AccordionItem>
+  <AccordionItem title="Yükleme yarıda kaldı, kalan dosyalar ne olacak">
+    Tamamlanan dosyalar kaydedilmiştir. Kalan dosyaları yeniden yükleyebilirsiniz.
+    Aynı dosyayı iki kez yüklerseniz sistem kopyayı ayıklar; bu nedenle tüm
+    klasörü baştan yüklemek güvenlidir.
+  </AccordionItem>
+  <AccordionItem title="Görüntü yüklendi ama galeride görünmüyor">
+    Yükleme listesinde dosyanın durumunu kontrol edin. Yüklenmiş görünüyorsa
+    sayfayı yenileyin. Filtreler açık olabilir; galerideki hasarlı veya kanat
+    filtresini temizleyin.
+  </AccordionItem>
+</Accordions>
+
+## Veri ve gruplama sorunları
+
+<Accordions>
+  <AccordionItem title="Hasarlar haritada veya kanat şemasında görünmüyor">
+    Hasarın konumu, görüntünün kanat ve yüzey bilgisinden hesaplanır. Bu
+    bilgiler eksikse hasar listelenir ama konumlandırılamaz.
+    <a href="/kanat-eslestirme/">Kanat ve yüzey eşleştirme</a> adımlarıyla
+    atamayı tamamlayın.
+  </AccordionItem>
+  <AccordionItem title="Aynı hasar birden çok satırda listeleniyor">
+    Birleştirme kanat, yüzey, tip ve kapsam yakınlığına bakar. Karelerin
+    kapsam bilgisi girilmemişse veya kareler farklı yüzeylere atanmışsa
+    birleştirme yapılamaz. Atamaları düzeltip kapsamları girdiğinizde sistem
+    gruplamayı yeniden hesaplar.
+  </AccordionItem>
+  <AccordionItem title="Türbin sağlık skoru beklendiği gibi değil">
+    Skor, hasarların şiddetinden hesaplanır. Bir hasarın şiddeti yanlış
+    girilmişse skor da yanlış olur. Hasarlar sayfasından ilgili hasarı açıp
+    şiddetini kontrol edin. Kapatılan hasarlar skoru yükseltir; kapatma
+    işleminin yapıldığından emin olun.
+  </AccordionItem>
+</Accordions>
+
+## Kilitli veya eksik düğmeler
+
+<Accordions>
+  <AccordionItem title="Rapor Oluştur düğmesi neden pasif">
+    AI taraması sürerken rapor üretimi kilitlidir. Taramanın bitmesini bekleyin.
+    Tarama bittikten sonra düğme açılır.
+  </AccordionItem>
+  <AccordionItem title="Anotasyon araçları görünmüyor">
+    Rolünüz operatör veya izleyici olabilir; bu roller kutu çizemez. Ya da
+    görüntü bir kanada atanmamıştır. Rolünüzü
+    <a href="/uyeler-roller/#yetki-tablosu">yetki tablosundan</a> kontrol edin.
+  </AccordionItem>
+  <AccordionItem title="Menüde bir öğe hiç görünmüyor">
+    İki olası neden var: rolünüzün o sayfaya yetkisi yoktur veya özellik
+    organizasyonunuzun ürün paketinde kapalıdır. Yöneticinize sorun.
+  </AccordionItem>
+</Accordions>
+
+## Erişim ve oturum sorunları
+
+<Accordions>
+  <AccordionItem title="Giriş yapamıyorum, şifrem çalışmıyor">
+    Geçici şifreler tek kullanımlıktır; ilk girişte belirlediğiniz şifre
+    geçerlidir. Şifrenizi hatırlamıyorsanız yöneticinizden yeni bir geçici
+    şifre isteyin.
+  </AccordionItem>
+  <AccordionItem title="Oturumum sürekli kapanıyor">
+    Başka bir cihazda "Tüm Cihazlardan Çıkış" yapılmış olabilir. Bunu
+    kendiniz yapmadıysanız şifrenizi değiştirin ve yöneticinize bilgi verin.
+  </AccordionItem>
+  <AccordionItem title="Yanlış organizasyondayım">
+    Sol üstteki organizasyon değiştiriciyi kullanın. Oluşturduğunuz kayıtlar
+    seçili organizasyona bağlanır; yanlış organizasyonda oluşturulan kayıtlar
+    diğer organizasyonda görünmez.
+  </AccordionItem>
+</Accordions>
+
+## Destek için bilgi toplama
+
+Sorunu destek ekibine iletirken şu bilgileri eklemek çözümü hızlandırır:
+
+<Steps>
+
+1. **Ekran görüntüsü alın**
+
+   Sorunun oluştuğu sayfanın görüntüsünü kaydedin.
+
+2. **Kayıt bilgilerini not edin**
+
+   Denetim veya hasar numarası gibi ilgili kayıt bilgilerini yazın.
+
+3. **Zamanı ve yapılan işlemi yazın**
+
+   Sorunun ne zaman başladığını ve o sırada ne yaptığınızı kısaca anlatın.
+
+4. **Karşılaştırma bilgisi ekleyin**
+
+   Sorunu sizin yerinize yapabilecek bir kullanıcıyla aynı işlemi deneyip denemediğinizi belirtin.
+
+</Steps>
+
+<Callout type="note" title="Tur düğmesini unutmayın">
+  Çoğu sayfada bulunan "Tura başla" düğmesi, ekranı yeniden tanımanın en hızlı
+  yoludur. Bir ekranda ne yapacağınızı hatırlamıyorsanız turu başlatın.
+</Callout>

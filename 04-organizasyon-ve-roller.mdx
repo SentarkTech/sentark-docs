@@ -1,0 +1,59 @@
+---
+title: "Organizasyon ve roller"
+description: "Organizasyon nedir, roller hangi işleri yapar, yetki sınırları nasıl çalışır ve pasif hesap ne anlama gelir."
+---
+
+import { Callout } from '@prosefly/astro-components';
+
+Organizasyon, Sentark'taki en üst veri katmanıdır. Sahalar, türbinler, denetimler, hasarlar ve raporların tamamı bir organizasyona bağlıdır ve iki organizasyon arasında veri paylaşımı yoktur. Bu izolasyon bilinçli bir tasarım tercihidir: farklı müşterilerin veya farklı iş birimlerinin verileri aynı platformda çalışsa bile birbirini görmez.
+
+Bir kullanıcı birden fazla organizasyonda görev alabilir. Örneğin bir danışman, birden çok müşterisinin organizasyonuna üye olabilir ve sol üstteki değiştirici ile aralarında geçiş yapar. Geçiş yaptığınızda menüler, listeler ve raporlar o organizasyonun verileriyle yenilenir. Yanlış organizasyonda işlem yapmamak için kayıt oluşturmadan önce üstteki organizasyon adını kontrol etmeyi alışkanlık haline getirin.
+
+## Roller ve sorumluluklar
+
+Sentark'ta beş rol bulunur. Roller, kullanıcının organizasyon içindeki görevine göre atanır ve yetkiler bu role göre belirlenir.
+
+**Sahip**, organizasyonun kurucusudur ve her yetkiye sahiptir. Organizasyonu silmek yalnızca sahibin yapabildiği tek işlemdir. **Yönetici**, sahiple aynı yetkilere sahiptir; tek farkı organizasyonu silememesidir. Üye davet etmek, rol değiştirmek, saha ve türbin oluşturmak bu rolün günlük işleridir.
+
+**Denetçi**, saha operasyonunun tamamını yürütür. Denetim açar, görüntü yükler, AI taramasını başlatır, hasar kutularını düzenler ve rapor üretir. Türbin oluşturabilir ve düzenleyebilir ancak türbin silemez. **Operatör**, denetim oluşturma ve görüntü yükleme ile sınırlıdır; hasar işaretleyemez, rapor üretemez, AI taraması başlatamaz. Bu rol genellikle sahada görüntü toplayan ekiplere verilir. **İzleyici** her şeyi görüntüleyebilir ama hiçbir değişiklik yapamaz; yöneticiler, müşteriler veya denetim sonuçlarını inceleyen paydaşlar için uygundur.
+
+## Yetki tablosu
+
+Aşağıdaki tablo, hangi rolün hangi işlemi yapabildiğini özetler. Bu tabloyu [Üyeler ve roller](/uyeler-roller/) sayfasında da bulabilirsiniz.
+
+| Yetki | Sahip | Yönetici | Denetçi | Operatör | İzleyici |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Organizasyonu silme | ✓ | | | | |
+| Üye yönetimi (davet, rol, pasif) | ✓ | ✓ | | | |
+| Saha oluştur, düzenle, sil | ✓ | ✓ | | | |
+| Türbin oluştur ve düzenle | ✓ | ✓ | ✓ | | |
+| Türbin silme | ✓ | ✓ | | | |
+| Denetim oluşturma | ✓ | ✓ | ✓ | ✓ | |
+| Denetim düzenleme ve silme | ✓ | ✓ | ✓ | | |
+| Görüntü yükleme | ✓ | ✓ | ✓ | ✓ | |
+| Görüntü silme | ✓ | ✓ | ✓ | | |
+| Anotasyon çizme ve düzenleme | ✓ | ✓ | ✓ | | |
+| AI taraması başlatma | ✓ | ✓ | ✓ | | |
+| Hasar durumu güncelleme | ✓ | ✓ | ✓ | | |
+| Rapor oluşturma | ✓ | ✓ | ✓ | | |
+| Rapor indirme ve dışa aktarma | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Bakım görevi yönetme | ✓ | ✓ | | | |
+| Şablon yönetme | ✓ | ✓ | | | |
+| Abonelik ve faturalama | ✓ | ✓ | | | |
+| Görüntüleme | ✓ | ✓ | ✓ | ✓ | ✓ |
+
+## Yetki sınırları nasıl çalışır
+
+Arayüz, yetkiniz olmayan işlemleri gizler veya devre dışı bırakır. Örneğin operatör rolüyle giriş yaptığınızda anotasyon paneli açılır ama kutu çizme araçları görünmez; rapor sekmesindeki oluşturma düğmesi pasif durur. Bu davranış bir hata değildir, izin tasarımının doğal sonucudur.
+
+<Callout type="note" title="Görmediğiniz düğme için yöneticinize başvurun">
+  Bir işlemi yapmanız gerekiyorsa ve ilgili düğmeyi göremiyorsanız, rolünüz o
+  işlemi kapsamıyor olabilir. Organizasyon yöneticinizden rol değişikliği
+  isteyin. Rol değişikliği bir sonraki sayfa yenilemesinde etkili olur.
+</Callout>
+
+## Pasif hesap
+
+Bir üyeyi organizasyondan tamamen çıkarmak yerine pasife almak çoğu durumda daha uygundur. Pasif üyenin oturumu anında kapanır ve bir sonraki giriş denemesinde "Hesabınız dondurulmuştur" ekranı görünür. Üyenin geçmiş kayıtları, oluşturduğu denetimler ve aktivite kayıtları olduğu gibi kalır. Üyelik yeniden aktif edildiğinde kullanıcı kaldığı yerden devam eder.
+
+Ayrılan bir çalışanın hesabını silmek yerine pasife almak, denetim geçmişindeki referansların bozulmamasını sağlar. Bu yüzden üye yönetimi ekranında "Üyeyi Kaldır" işlemi geri alınamaz bir işlem olarak işaretlenmiştir.

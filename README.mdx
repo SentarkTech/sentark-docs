@@ -1,0 +1,83 @@
+---
+title: "Sentark Kullanıcı Rehberi"
+description: "Rüzgar türbini kanat denetimlerini uçtan uca yönetin: görüntü yükleme, AI ön tarama, hasar inceleme ve PDF raporlama."
+---
+
+import { Card, CardGrid, Callout, Steps } from '@prosefly/astro-components';
+
+Sentark, rüzgar türbini kanatlarının sağlığını takip etmek için kullanılan bir platformdur. Saha ekipleri drone veya sabit kamera ile kanatları fotoğraflar, siz bu görüntüleri sisteme yüklersiniz, yapay zekâ olası hasarları işaretler ve siz her bulguyu gözden geçirip onayladıktan sonra imzalı bir PDF rapor üretirsiniz. Tüm süreç tek bir denetim kaydı altında toplanır; böylece bir türbinin geçmişine yıllar sonra dönüp baktığınızda hangi hasarın ne zaman tespit edildiğini, ne zaman onarıldığını ve sağlık skorunun nasıl değiştiğini görebilirsiniz.
+
+Bu rehber, platformu ilk kez açan bir kullanıcıyı sıfırdan ilk raporuna kadar götürecek şekilde düzenlendi. Sayfalar görev sırasına göre gruplandı: önce hesabınızı ve organizasyonunuzu tanıyacak, ardından filonuzu kuracak, bir denetim açıp görüntüleri yükleyecek, AI taramasını inceleyecek ve sonunda raporunuzu alacaksınız. Her bölümün başında o sayfanın hangi soruya cevap verdiği anlatılır, sonunda ise sık karşılaşılan durumlar ve bir sonraki adım yer alır.
+
+## On beş dakikada ilk denetiminiz
+
+Aşağıdaki altı adım, boş bir organizasyondan imzalı rapora kadar giden en kısa yoldur. Her adım kendi sayfasında ayrıntılı olarak anlatılır; acele etmeyin, ilk seferde sırayla ilerlemeniz yeterlidir.
+
+<Steps>
+
+1. **Hesabınıza giriş yapın**
+
+   Davet e-postanızdaki geçici şifre ile giriş yapın veya kayıt ekranından kendi hesabınızı açın. İlk girişte sistem sizden yeni bir şifre belirlemenizi ister. Ayrıntılar: [İlk oturumunuz](/ilk-oturum/).
+
+2. **Bir saha ve bir türbin ekleyin**
+
+   Sahalar türbinleri gruplar, denetimler ise her zaman bir türbine bağlanır. Türbin kaydını tamamlamadan denetim açamazsınız. Ayrıntılar: [Sahalar](/sahalar/) ve [Türbinler](/turbinler/).
+
+3. **Yeni bir denetim oluşturun**
+
+   Denetime bir başlık verin, türbinü seçin ve çekim yöntemini işaretleyin. Saha çekimi için hazır bir rehber karşınıza gelir. Ayrıntılar: [Denetim oluşturma](/denetim-olusturma/).
+
+4. **Görüntüleri yükleyin**
+
+   Denetim klasörünü olduğu gibi sürükleyin. Sistem dosya yollarından kanat ve yüzeyleri tanır, kalite kontrolünden geçmeyen dosyaları ayırır. Ayrıntılar: [Görüntü yükleme](/goruntu-yukleme/).
+
+5. **AI ön taramayı başlatın ve inceleyin**
+
+   Tarama arka planda çalışır, bitince bildirim gelir. Her görüntüyü Doğru, Düzenle veya Geç kararıyla saniyeler içinde onaylarsınız. Ayrıntılar: [AI ön tarama](/ai-on-tarama/).
+
+6. **Raporunuzu oluşturun**
+
+   Denetimin Rapor sekmesinden tek tıkla imzalı PDF üretilir. Üretim birkaç dakika sürebilir ve sayfadan ayrılmamanız gerekir. Ayrıntılar: [Raporlar](/raporlar/).
+
+</Steps>
+
+## Rehber bölümleri
+
+<CardGrid>
+  <Card icon="lucide:rocket" title="Başlangıç" href="/giris/">
+    Platformun temel kavramları, ilk oturum, arayüz ve roller.
+  </Card>
+  <Card icon="lucide:map-pin" title="Filo Kurulumu" href="/sahalar/">
+    Saha sınırı çizimi, türbin kaydı, konum ve sağlık skoru.
+  </Card>
+  <Card icon="lucide:clipboard-check" title="Denetimler" href="/denetim-olusturma/">
+    Denetim açma, toplu yükleme, kanat eşleştirme, galeri.
+  </Card>
+  <Card icon="lucide:sparkles" title="AI ve İnceleme" href="/ai-on-tarama/">
+    Ön tarama, inceleme akışı, Annotation Studio ve hasarlar.
+  </Card>
+  <Card icon="lucide:file-text" title="Raporlama ve Bakım" href="/raporlar/">
+    Resmi rapor, şablonlar, servis raporu arşivi ve bakım görevleri.
+  </Card>
+  <Card icon="lucide:chart-line" title="Analitik" href="/panel/">
+    Günlük özet, derin grafikler, filo haritası ve türbin geçmişi.
+  </Card>
+  <Card icon="lucide:users" title="Yönetim" href="/uyeler-roller/">
+    Üye daveti, rol yetkileri, ayarlar ve aktivite günlüğü.
+  </Card>
+  <Card icon="lucide:circle-help" title="Yardım" href="/sss/">
+    Sık sorulan sorular ve sorun giderme adımları.
+  </Card>
+</CardGrid>
+
+## Rehberi nasıl okumalısınız
+
+Rehberde iki tür içerik bulacaksınız. Kavram sayfaları bir özelliğin ne işe yaradığını, arka planda neler olduğunu ve hangi durumlarda dikkat edilmesi gerektiğini anlatır. Görev sayfaları ise adım adım yapılacakları sıralar; bu sayfalarda numaralı adımlar, tablolar ve uyarı kutuları görürsünüz.
+
+Bir işlemi yaparken takılırsanız önce ilgili sayfanın sonundaki "Sık sorulanlar" bölümüne bakın. Cevabı bulamazsanız [SSS](/sss/) ve [Sorun Giderme](/sorun-giderme/) sayfaları çoğu durumu kapsar. Hâlâ çözülmeyen bir konu için organizasyon yöneticinize veya Sentark desteğine ekran görüntüsüyle birlikte yazabilirsiniz.
+
+<Callout type="tip" title="Her sayfada bir tur düğmesi var">
+  Sayfa başlığındaki "Tura başla" düğmesi, o ekrandaki önemli alanları tek tek
+  vurgulayarak gezdirir. Rehberi okumadan önce turu başlatmak, ekranı
+  tanımanın en hızlı yoludur.
+</Callout>

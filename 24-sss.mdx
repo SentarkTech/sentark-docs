@@ -1,0 +1,122 @@
+---
+title: "SSS"
+description: "Sık sorulan sorular: yükleme, AI tarama, inceleme, hasarlar, rapor ve hesap konularında kısa yanıtlar."
+---
+
+import { AccordionItem, Accordions, Callout } from '@prosefly/astro-components';
+
+Bu sayfa, en sık sorulan soruları konu başlıklarına göre toplar. Her sorunun yanıtı ilgili sayfaya bağlantı içerir; daha ayrıntılı anlatım için o sayfaya geçebilirsiniz. Sorunuz burada yoksa [Sorun Giderme](/sorun-giderme/) sayfasına bakın.
+
+## Görüntü yükleme
+
+<Accordions>
+  <AccordionItem title="Dosyalarım yüklenmiyor veya hatalı görünüyor">
+    Kalite kontrolü dosyayı reddetmiş demektir. Bozuk dosya, desteklenmeyen
+    biçim veya okunamayan içerik bu sonucu doğurur. DNG, RAW ve HEIC gibi
+    biçimler tarayıcıda açılmaz; JPEG'e dönüştürüp yeniden yükleyin.
+  </AccordionItem>
+  <AccordionItem title="Düşük çözünürlük uyarısı ne demek?">
+    Görüntü analiz için zayıf demektir ve küçük hasarlar gözden kaçabilir.
+    Mümkünse daha yüksek çözünürlükle yeniden çekin. Yine de yükleyebilirsiniz,
+    ancak bu durum raporda uyarı olarak görünür.
+  </AccordionItem>
+  <AccordionItem title="Görüntü kanata atanmamış uyarısı alıyorum">
+    Kare hangi kanat ve yüzeye ait olduğu tanınamamış demektir. Kanat ve yüzey
+    bilgisi olmadan hasarların konumu ve gruplaması çalışmaz.
+    <a href="/kanat-eslestirme/">Kanat ve yüzey eşleştirme</a> adımlarıyla
+    atamayı tamamlayın.
+  </AccordionItem>
+</Accordions>
+
+## AI ön tarama
+
+<Accordions>
+  <AccordionItem title="Taramayı Başlat düğmesi görünmüyor">
+    İki olası neden var. Rolünüz operatör veya izleyici olabilir; bu roller
+    tarama başlatamaz. Ya da taranacak görüntü yoktur, çünkü tümü daha önce
+    işlenmiştir.
+  </AccordionItem>
+  <AccordionItem title="Tarama neden hemen başlamıyor?">
+    Organizasyon genelinde aynı anda en fazla iki tarama çalışır. Sınır
+    doluysa taramanız kuyrukta bekler ve sırası geldiğinde otomatik başlar.
+  </AccordionItem>
+  <AccordionItem title="Pipeline yanıt vermiyor uyarısı alıyorum">
+    Model servisi devre dışı demektir. Bu durumda yapabileceğiniz bir işlem
+    yoktur; organizasyon yöneticinize bilgi verin. Servis yeniden
+    başlatıldığında taramayı tekrar başlatabilirsiniz.
+  </AccordionItem>
+  <AccordionItem title="Tarama bitti ama kutular görünmüyor">
+    Kutular Analiz sekmesinde görünür ve incelemeye "İncelemeye Başla" ile
+    girilir. Hasarsız kareler doğal olarak boş gelir, bu iyi haberdir.
+  </AccordionItem>
+</Accordions>
+
+## İnceleme ve hasarlar
+
+<Accordions>
+  <AccordionItem title="Yanlışlıkla Geç dedim veya incelemeyi yarım bıraktım">
+    Sorun değil. İncelemeyi kapatabilirsiniz; kaldığınız yerden devam etmek
+    için aynı düğmeyi kullanın. "Geçilenleri İncele" geçtiğiniz kareleri
+    yeniden dolaşır. Kararlar geri alınıp değiştirilebilir.
+  </AccordionItem>
+  <AccordionItem title="Aynı hasar listede tek satırda görünmüyor">
+    Gruplama kanat, yüzey, tip ve kapsam yakınlığına bakar. Karelerin kapsam
+    bilgisi eksikse birleştirme yapılamaz. Kapsamları tamamladığınızda sistem
+    gruplamayı yeniden hesaplar.
+  </AccordionItem>
+  <AccordionItem title="AI güven skoru düşük, kutu silinmeli mi?">
+    Düşük skor "şüpheyle incele" anlamına gelir, otomatik olarak yanlış
+    demek değildir. Kutuyu Studio'da açıp değerlendirin. Gerçekten yanlışsa
+    silerken neden belirtmeniz modellerin iyileşmesine katkı sağlar.
+  </AccordionItem>
+</Accordions>
+
+## Rapor
+
+<Accordions>
+  <AccordionItem title="Rapor Oluştur düğmesi kilitli">
+    AI taraması sürüyor demektir. Tarama bitmeden rapor üretilemez.
+    İnceleme bitmediyse düğme açıktır ama "eksik hasar içerebilir" uyarısı
+    çıkar.
+  </AccordionItem>
+  <AccordionItem title="PDF açılmıyor veya indirilmiyor">
+    Üretim henüz bitmemiş olabilir; sayfayı yenileyin. Üretim hatası varsa
+    kart üzerinde görünür, "Yeniden Oluştur" ile tekrar deneyin.
+  </AccordionItem>
+</Accordions>
+
+## Hesap ve izinler
+
+<Accordions>
+  <AccordionItem title="Bir menüyü veya düğmeyi göremiyorum">
+    Ya rolünüz o işlemi kapsamıyordur ya da özellik organizasyonunuzun ürün
+    paketinde kapalıdır. Yetki tablosu için
+    <a href="/uyeler-roller/#yetki-tablosu">Üyeler ve roller</a> sayfasına,
+    rol değişikliği için organizasyon yöneticinize başvurun.
+  </AccordionItem>
+  <AccordionItem title="Hesabınız dondurulmuştur ekranı görüyorum">
+    Üyeliğiniz pasife alınmış demektir. Verileriniz korunur ve hesabınız geri
+    açılabilir; organizasyon yöneticinizle iletişime geçin.
+  </AccordionItem>
+  <AccordionItem title="Şifremi unuttum">
+    Organizasyon yöneticiniz Üyeler sayfasından sizin için geçici şifre
+    üretebilir. Bu şifreyle giriş yaptığınızda yeni şifrenizi belirlersiniz.
+  </AccordionItem>
+  <AccordionItem title="Bildirim gelmiyor">
+    Bildirimler zil simgesi altında birikir ve uygulama açık değilken
+    görünmezler. Tarama bitince mutlaka düşer. E-posta bildirimi
+    gönderilmez.
+  </AccordionItem>
+</Accordions>
+
+## Yakında
+
+<Callout type="note" title="Hazırlanan özellikler">
+  Aşağıdaki özellikler menüde "Yakında" rozetiyle görünür ve henüz tıklanamaz.
+  Aktif olduklarında duyurulacak.
+</Callout>
+
+- **3B Görünüm ve Dijital İkiz**: türbinin üç boyutlu modeli üzerinde hasar katmanları
+- **Karşılaştırma**: iki görüntüyü yan yana kaydırıcı ile karşılaştırma
+- **İçe Aktar**: CSV dosyasıyla toplu türbin yükleme
+- **Kanat Eşleştirme sekmesi**: denetimde sürükle-bırak ile havuz ataması; şimdilik otomatik tanıma ve Analiz ekranında elle düzeltme kullanılıyor

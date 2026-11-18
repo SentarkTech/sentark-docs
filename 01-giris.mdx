@@ -1,0 +1,64 @@
+---
+title: "Sentark'a giriş"
+description: "Platformun çözdüğü problem, temel kavramlar ve veri hiyerarşisi: organizasyon, saha, türbin, denetim, görüntü, anotasyon ve hasar."
+---
+
+import { Card, CardGrid, Callout } from '@prosefly/astro-components';
+
+Bir rüzgar türbini kanadında oluşan hasarın erken tespiti, hem onarım maliyetini hem de duruş süresini doğrudan etkiler. Hücum kenarındaki küçük bir erozyon zamanında görülmezse yapısal bir çatlağa dönüşebilir; yıldırım hasarı ise çoğu zaman yalnızca yakından çekilmiş bir fotoğrafta fark edilir. Sentark, bu tür bulguları düzenli denetimlerle takip etmek ve ekipler arasında kaybolmadan kayıt altına almak için tasarlandı.
+
+Platform, saha ekiplerinin çektiği fotoğraf ve videoları bir denetim kaydı altında toplar. Yapay zekâ ön tarama, görüntülerdeki olası hasarları işaretler; ancak hiçbir bulgu insan onayı olmadan kesinleşmez. Denetçi her görüntüyü gözden geçirir, gerekiyorsa kutuları düzeltir veya siler ve sonunda denetimin tamamını kapsayan bir PDF rapor üretilir. Aynı türbinin yıllar içindeki denetimleri biriktikçe, hasarların nasıl seyrettiğini gösteren bir geçmiş oluşur.
+
+## Temel kavramlar
+
+Rehberin geri kalanında sık geçen altı kavramı baştan netleştirmek, sonraki sayfaları okumayı kolaylaştırır.
+
+- **Organizasyon**, şirketinizin çalışma alanıdır. Tüm veriler organizasyona bağlıdır ve bir organizasyonun verisi başka bir organizasyondan görünmez. Bir kullanıcı birden fazla organizasyonda görev alabilir ve sol üstteki değiştirici ile aralarında geçiş yapabilir.
+
+- **Saha**, türbinlerin bulunduğu coğrafi bölgedir. Bir rüzgar santrali genellikle tek bir saha olarak tanımlanır ve sahanın sınırları harita üzerinde çizilebilir. Saha zorunlu değildir; türbinleri gruplamak, haritada bölge bazlı görmek ve raporlarda bölge ayrımı yapmak için kullanılır.
+
+- **Türbin**, denetimlerin bağlandığı asıl varlıktır. Her türbinin bir kodu (örneğin SMT-01), teknik özellikleri ve isteğe bağlı bir konumu vardır. Türbinin sağlık skoru, denetimlerde işaretlenen hasarların şiddetinden hesaplanır.
+
+- **Denetim**, bir türbinin belirli bir gündeki kanat muayenesidir. Denetim açılırken türbin ve çekim yöntemi seçilir, görüntüler bu denetim altına yüklenir ve tüm bulgular bu kayda bağlanır. Bir denetim taslak, devam ediyor, incelemede ve tamamlandı aşamalarından geçer.
+
+- **Anotasyon**, bir fotoğraf üzerine çizilen kutudur. Kutu yapay zekâ tarafından önerilmiş ya da elle çizilmiş olabilir. Aynı hasar üç farklı açıdan fotoğraflandıysa üç ayrı anotasyon oluşur.
+
+- **Hasar**, kanattaki tek fiziksel bulgudur. Sistem, aynı kanat ve yüzeyde birbirine yakın konumdaki anotasyonları otomatik olarak tek hasarda birleştirir. Böylece listede aynı çatlağı üç kez değil, "üç karede görünen tek hasar" olarak görürsünüz.
+
+## Veri hiyerarşisi
+
+Bu kavramlar birbirine sıkı sıkıya bağlıdır ve her kayıt bir üstündekine bağlanır:
+
+```text
+Organizasyon
+└── Saha (isteğe bağlı gruplama)
+    └── Türbin
+        └── Denetim
+            ├── Görüntüler
+            │   └── Anotasyonlar
+            ├── Hasarlar (anotasyonlardan gruplanır)
+            ├── Kontrol listesi (şablondan)
+            └── Rapor
+```
+
+Bir kaydı silmek her zaman altındaki her şeyi silmez. Örneğin bir sahayı sildiğinizde türbinler silinmez, yalnızca saha bağları kopar. Bu ayrım, veri kaybını önlemek için bilinçli olarak tasarlanmıştır.
+
+## Sizin için doğru başlangıç
+
+<CardGrid>
+  <Card icon="lucide:user-plus" title="Yeni kullanıcıyım" href="/ilk-oturum/">
+    Hesabımı açıp ilk denetimimi oluşturmak istiyorum.
+  </Card>
+  <Card icon="lucide:compass" title="Ekranı tanımak istiyorum" href="/arayuz-turu/">
+    Menüler, arama, bildirimler ve tema ayarlarını öğrenmek istiyorum.
+  </Card>
+  <Card icon="lucide:users" title="Ekibi yönetiyorum" href="/uyeler-roller/">
+    Üye davet edecek, roller atayacak veya yetkileri düzenleyeceğim.
+  </Card>
+</CardGrid>
+
+<Callout type="note" title="Terimler Türkçe kullanılıyor">
+  Arayüzde "denetim", "hasar", "saha" ve "türbin" terimleri kullanılır. Bazı
+  raporlarda ve dışa aktarımlarda İngilizce karşılıklarını (inspection,
+  defect, site) görebilirsiniz; aynı kavramları ifade eder.
+</Callout>

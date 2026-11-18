@@ -1,0 +1,6 @@
+# Ara ürün görseller (video frame çıkarımları) — yayınlanmaz
+assets/frames/
+
+# OS
+.DS_Store
+Thumbs.db

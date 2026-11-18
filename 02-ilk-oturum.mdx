@@ -1,0 +1,95 @@
+---
+title: "İlk oturumunuz"
+description: "Hesap açma yolları, ilk girişte şifre belirleme, organizasyon kurulumu ve ilk denetiminizi oluşturana kadar izlenecek adımlar."
+---
+
+import { Callout, Card, CardGrid, Steps, Tabs, TabItem } from '@prosefly/astro-components';
+
+Bu sayfa, Sentark'ı ilk kez açan bir kullanıcının hesabını nasıl edineceğini ve ilk girişte nelerle karşılaşacağını anlatır. Çoğu kullanıcı organizasyona davet edilerek başlar; kendi hesabını oluşturanlar ise ek bir kurulum ekranından geçer. Hangi yoldan gelirseniz gelin, ilk oturumun sonunda organizasyonunuza bağlı bir kullanıcı hesabınız olur.
+
+## Hesabınızı nasıl edinirsiniz
+
+Sentark'a giriş iki farklı yoldan yapılır ve bu yollar ilk girişte farklı ekranlar gösterir.
+
+<Tabs>
+  <TabItem label="Davet ile">
+    Organizasyon yöneticiniz sizi **Üyeler → Üye Davet Et** ekranından sisteme ekler. Bu işlem sırasında sizin için bir hesap oluşturulur ve size e-posta adresinizle birlikte geçici bir şifre iletilir. Geçici şifre tek kullanımlıktır: ilk girişte sistem sizden kendi şifrenizi belirlemenizi ister. Belirlediğiniz şifre en az altı karakter olmalıdır ve sonraki girişlerinizde bu şifreyi kullanırsınız.
+
+    <Steps>
+
+    1. **Giriş sayfasını açın**
+
+       Yöneticinizden gelen e-posta adresi ve geçici şifre ile giriş sayfasına gidin.
+
+    2. **Geçici şifre ile oturum açın**
+
+       E-posta ve geçici şifreyi girip oturum açın. Bu şifre tek kullanımlıktır.
+
+    3. **Yeni şifrenizi belirleyin**
+
+       Karşınıza gelen ekranda yeni şifrenizi iki kez girin ve kaydedin.
+
+    4. **Panele geçin**
+
+       Organizasyonun panel ekranı açılır, hesabınız kullanıma hazırdır.
+
+    </Steps>
+  </TabItem>
+  <TabItem label="Kayıt ile">
+    Kendi organizasyonunuzu kuracaksanız kayıt ekranından hesabınızı kendiniz oluşturursunuz. Kayıttan hemen sonra bir kurulum ekranı açılır ve sizden organizasyon bilgileri istenir. Organizasyon adı dışında bir şey girmeniz gerekmez; kısa kod (slug) isimden otomatik üretilir. Kurulum tamamlandığında organizasyonun sahibi olarak başlarsınız ve tüm yetkilere sahip olursunuz.
+
+    <Steps>
+
+    1. **Hesabınızı oluşturun**
+
+       Kayıt ekranından e-posta adresiniz ve şifrenizle hesabınızı oluşturun.
+
+    2. **Organizasyon adını girin**
+
+       Kurulum ekranında organizasyon adını yazın. Kısa kod isimden otomatik üretilir.
+
+    3. **Kurulumu tamamlayın**
+
+       Kaydedin; organizasyonun sahibi olarak panele yönlendirilirsiniz.
+
+    </Steps>
+  </TabItem>
+</Tabs>
+
+<Callout type="note" title="Giriş ekranının görüntüsü">
+  📷 Giriş sayfası, e-posta ve şifre alanları ile "Şifremi unuttum"
+  bağlantısından oluşur. Bu ekranın görüntüsü canlı ortamdan eklenecek.
+</Callout>
+
+## İlk girişte karşılaşacaklarınız
+
+Oturum açtığınızda panel ekranı karşınıza gelir. Üstte filonuzun özetini gösteren dört sayaç, altında filo haritası ve son denetimler bulunur. Henüz hiçbir veri girmediğiniz için sayaçlar sıfır görünür; bu normaldir ve ilk denetiminizi oluşturduğunuzda dolmaya başlar.
+
+İlk oturumda yapmanız gereken tek şey, üst menüdeki organizasyon adının sizin çalışma alanınız olduğunu doğrulamaktır. Birden fazla organizasyonda görev alıyorsanız sol üstteki değiştirici ile doğru organizasyonu seçin. Yanlış organizasyondayken oluşturduğunuz kayıtlar diğer organizasyonda görünmez, bu yüzden işe başlamadan önce kontrol etmek iyi bir alışkanlıktır.
+
+## Organizasyon ve roller hakkında bilmeniz gerekenler
+
+Organizasyon, tüm verilerinizin bağlı olduğu çalışma alanıdır ve roller bu alan içinde ne yapabileceğinizi belirler. Sahip ve yönetici rolleri üye davet edebilir, saha ve türbin oluşturabilir; denetçi rolleri saha çalışmasının tamamını yürütür; operatör yalnızca denetim açar ve görüntü yükler; izleyici ise her şeyi görür ama hiçbir değişiklik yapamaz.
+
+Ekranınızda bazı düğmelerin görünmemesi bir hata değildir. Yetkiniz olmayan işlemler arayüzden gizlenir veya devre dışı bırakılır. Daha fazla yetki gerekiyorsa organizasyon yöneticinizden rolünüzün güncellenmesini isteyin. Ayrıntılı yetki tablosu için [Organizasyon ve roller](/organizasyon-ve-roller/) sayfasına bakabilirsiniz.
+
+<Callout type="warning" title="Hesabınız dondurulmuş görünüyorsa">
+  Yönetici üyeliğinizi pasife aldığında girişte "Hesabınız dondurulmuştur"
+  ekranı görürsünüz ve organizasyona erişiminiz anında kesilir. Verileriniz
+  korunur ve hesabınız geri açılabilir; yöneticinizle iletişime geçin.
+</Callout>
+
+## Şifrenizi unuttuysanız
+
+Sentark'ta şifre sıfırlama akışı yönetici üzerinden işler. Organizasyon yöneticiniz **Üyeler** sayfasından sizin için geçici bir şifre üretir ve size iletir. Bu şifreyle giriş yaptığınızda sistem yeni bir şifre belirlemenizi ister. Kendi organizasyonunuzun sahibiyseniz ve erişiminizi tamamen kaybettiyseniz Sentark desteğine başvurmanız gerekir.
+
+## Sonraki adım
+
+<CardGrid>
+  <Card icon="lucide:compass" title="Arayüz Turu" href="/arayuz-turu/">
+    Menüleri, genel aramayı ve bildirimleri tanıyın.
+  </Card>
+  <Card icon="lucide:map-pin" title="Filonuzu kurun" href="/sahalar/">
+    İlk sahanızı ve türbinünüzü ekleyerek denetime hazırlanın.
+  </Card>
+</CardGrid>
