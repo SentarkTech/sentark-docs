@@ -1,0 +1,22 @@
+name: Deploy docs
+
+# main'e her push'ta docs.sentarktech.com yeniden derlenir (Netlify build hook).
+# NETLIFY_BUILD_HOOK secret'ı repo ayarlarından tanımlanır.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: netlify-deploy
+  cancel-in-progress: false
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Netlify build hook
+        env:
+          NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+        run: curl -fsSL -X POST "$NETLIFY_BUILD_HOOK"

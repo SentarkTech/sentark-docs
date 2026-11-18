@@ -4,8 +4,8 @@ Bu repo, [docs.sentarktech.com](https://docs.sentarktech.com) adresinde yayınla
 Sentark kullanıcı rehberinin kaynak içeriğidir (MDX). Site kodu ayrı bir repoda
 tutulur; bu repo yalnızca dokümanları ve görselleri barındırır.
 
-İçerik buradan periyodik olarak siteye çekilir — `main` dalına birleşen bir
-değişiklik, bir sonraki site derlemesinde yayınlanır.
+`main` dalına birleşen değişiklikler site derlemesini tetikler ve birkaç dakika
+içinde yayınlanır (ayrıca haftalık zamanlanmış derleme de vardır).
 
 ## Düzenleme önermek
 
